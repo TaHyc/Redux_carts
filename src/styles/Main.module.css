@@ -1,0 +1,50 @@
+.icon {
+  width: 40px;
+  height: 40px;
+}
+.favorites {
+  position: relative;
+}
+html {
+  background-color: #fdd5a5;
+}
+header {
+  padding: 0.5vw ;
+  color: white;
+  align-items: center;
+  display: flex;
+  font-size: 30px;
+  background-color: #a5cefd;
+  border-radius: 5px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+header a {
+  color: white;
+  text-decoration: none;
+  text-transform: none;
+  transition: filter 0.3s ease;
+}
+header a:hover {
+  filter: brightness(0.6);
+}
+.count {
+  font-size: 20px;
+  font-weight: 500;
+  color: #a5cefd;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  position: absolute;
+  border-radius: 50%;
+  right: 0;
+  bottom: 0;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+}
