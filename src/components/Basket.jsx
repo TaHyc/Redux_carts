@@ -1,5 +1,6 @@
 import { useFavorites } from "../redux/hooks/useFavorites";
 import style from "../styles/Main.module.css";
+import Item from './Item';
 
 export default function Basket() {
   const { favorites } = useFavorites();
@@ -9,18 +10,9 @@ export default function Basket() {
   } else
     return (
       <div className="App">
-        {favorites.map((item) => (
-          <div key={item.id} className={style.main}>
-            {item.name}
-            {item.id}
-            <div className={style.images}>
-              {item.photos.map((element, id) => (
-                <img key={id} src={element} />
-              ))}
-            </div>
-            <span className={style.category}>Категория: {item.category}</span>
-          </div>
-        ))}
+        {favorites.map((item) => <Item key={item.id} item={item}/>)}
+
+        
       </div>
     );
 }

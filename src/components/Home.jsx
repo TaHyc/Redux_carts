@@ -1,49 +1,52 @@
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import { useGetRecipesQuery } from "../redux/API/api";
-import { useActions } from '../redux/hooks/useActions'
-import { useFavorites } from '../redux/hooks/useFavorites';
-import { useCounter } from "../redux/hooks/useCounter";
 import CreateRecipe from "./CreacteRecipe";
-import Item from './Item';
+import Item from "./Item";
 import style from "../styles/Main.module.css";
 
 const userId = 1;
 
 export default function Home() {
-  const { increment, decrement } = useActions();
-  const { count } = useCounter();
-  const { isLoading } = useSelector((state) => state.user);
+  const [search, setSearch] = useState("");
+
   const { data } = useGetRecipesQuery(undefined, {
     skip: !userId,
   });
-  console.log("Data:", data)
 
-  
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  let filteredData = "";
+
+  if (data) {
+    filteredData = data.filter(
+      (item) =>
+        item.brand.toLowerCase().includes(search.toLowerCase()) ||
+        item.category.toLowerCase().includes(search.toLowerCase())
+    );
+    
+  }
   return (
     <div className="App">
+      <input
+        placeholder="Search..."
+        className={style.search}
+        onChange={handleChange}
+      />
+
       <CreateRecipe />
+
       <div className={style.content}>
-        {isLoading ? (
-          <div>Loading...</div>
-        ) : data ? (
-          data.map(item => <Item key={item.id} item={item}/>)
-        ) : (
-          <h3 style={{margin: "7vw auto"}}>Not found</h3>
-        )}
+        {data ? 
+          filteredData.length>0 ?
+          filteredData.map((item) => <Item key={item.id} item={item} />):
+          <h3 style={{ margin: "7vw auto" }}>Not found...</h3>
+         : 
+          <h3 style={{ margin: "7vw auto" }}>Loading...</h3>
+        }
       </div>
     </div>
   );
 }
-
-/*     <div>
-<button aria-label="Increment value" onClick={() => increment()}>
-Increment
-</button>
-
-<span>{count}</span>
-
-<button aria-label="Decrement value" onClick={() => decrement()}>
-Decrement
-</button>
-</div>
-*/

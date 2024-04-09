@@ -5,18 +5,16 @@ import style from "../styles/Item.module.css";
 
 export default function Item({item}) {
   const { favorites } = useFavorites();
-  const { toggleFavorites, wiewResult } = useActions();
+  const { toggleFavorites } = useActions();
   const isExist = favorites.some(r => r.id === item.id);
   return (
     <div key={item.id} className={style.main}>
-      {item.name}
+      {item.brand}, id:
       {item.id}
       <div className={style.images}>
-        {item.photos.map((element, id) => (
-          <img key={id} src={element} />
-        ))}
+        <img src={item.photos} />
       </div>
-      <span className={style.category}>Категория: {item.category}</span>
+      <span className={style.category}>Body type: {item.category}</span>
       <button onClick={() => toggleFavorites(item)}>
         {isExist ? "Remove from": "Add to"}{" "}favorites
       </button>

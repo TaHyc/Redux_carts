@@ -1,0 +1,74 @@
+[
+  {
+    "brand": "Opel",
+    "category": "sedan",
+    "photos": "https://avatars.mds.yandex.net/i?id=2a496f8d306462d3551bb15e7b72eada1f168f7f-11506583-images-thumbs&n=13",
+    "id": "3"
+  },
+  {
+    "brand": "BMW",
+    "category": "coupe",
+    "photos": "https://avatars.mds.yandex.net/i?id=664dc379b4e77224eb6e28d766284d912c7b71f8-4024741-images-thumbs&n=13",
+    "id": "2"
+  },
+  {
+    "brand": "Toyota",
+    "category": "pickup",
+    "photos": "https://avatars.mds.yandex.net/i?id=b29499b33cef506b80df26d49809253aeefedd1b-10996738-images-thumbs&n=13",
+    "id": "1"
+  },
+  {
+    "brand": "Mersedes",
+    "category": "coupe",
+    "photos": "https://sportishka.com/uploads/posts/2023-12/1701933117_sportishka-com-p-krasnii-mersedes-kupe-vkontakte-6.jpg",
+    "id": "4"
+  },
+  {
+    "brand": "Audi",
+    "category": "hatchback",
+    "photos": "https://static.insales-cdn.com/images/products/1/5711/187954767/Audi_A3__8V__2012.jpg",
+    "id": "5"
+  },
+  {
+    "brand": "Ford",
+    "category": "universal",
+    "photos": "https://avatars.mds.yandex.net/i?id=ac8ee3a34827d82120eeff515041ebf57fded449-11944133-images-thumbs&n=13",
+    "id": "6"
+  },
+  {
+    "brand": "Mazda 6",
+    "category": "sedan",
+    "photos": "https://avatars.mds.yandex.net/i?id=214ad2086fbb6d72bf71d6c6c09f451bca8e62a8-5219773-images-thumbs&n=13",
+    "id": "7"
+  },
+  {
+    "brand": "Honda",
+    "category": "sedan",
+    "photos": "https://avatars.mds.yandex.net/i?id=ab5fc7863fb117983d35bc28ecb0b1a446575b33-10698550-images-thumbs&n=13",
+    "id": "8"
+  },
+  {
+    "brand": "Chevrolet",
+    "category": "coupe",
+    "photos": "https://avatars.mds.yandex.net/i?id=68835242c87f04b83339eacc814c128a877792f0-11394427-images-thumbs&n=13",
+    "id": "9"
+  },
+  {
+    "brand": "Nissan",
+    "category": "pickup",
+    "photos": "https://avatars.mds.yandex.net/i?id=836ce6a09cc86575dbb3dc999ffda96135a6339b-10878220-images-thumbs&n=13",
+    "id": "10"
+  },
+  {
+    "brand": "Volkswagen",
+    "category": "hatchback",
+    "photos": "https://avatars.mds.yandex.net/i?id=3cdb029f018d6aca8e5830046f48b7792ff0450a-10637677-images-thumbs&n=13",
+    "id": "11"
+  },
+  {
+    "brand": "Hyundai",
+    "category": "universal",
+    "photos": "https://avatars.mds.yandex.net/i?id=12dc32a3bbe9e1136b6c72425c1bf42c1d06827f-10936100-images-thumbs&n=13",
+    "id": "12"
+  }
+]

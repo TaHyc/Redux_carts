@@ -3,11 +3,14 @@ import { useCreateRecipeMutation } from "../redux/API/recipe.api";
 import style from "../styles/Item.module.css";
 
 export default function CreateRecipe() {
+
+  const defaultCategory = "sedan";
+
   const defaultValue = {
     id: null,
-    name: "",
-    category: 0,
-    photos: [],
+    brand: "",
+    category: defaultCategory,
+    photos: "",
   };
 
   const [recipe, setResipe] = useState(defaultValue);
@@ -22,27 +25,48 @@ export default function CreateRecipe() {
   };
 
   return (
-      <form onSubmit={handleSubmit}>
-        Создать свой:
-        <div className={style.row}>
-        <label><input type="text" placeholder="Name" value={recipe.name}
-            onChange={(e) => setResipe({ ...recipe, name: e.target.value })}
+    <form onSubmit={handleSubmit}>
+      Add your car:
+      <div className={style.row}>
+        
+          <input
+            type="text"
+            placeholder="Brand"
+            value={recipe.brand}
+            onChange={(e) => setResipe({ ...recipe, brand: e.target.value })}
           />
-        </label>
-        <label><input type="number" placeholder="Category" value={recipe.category}
+        
+
+        
+          <select
+            value={recipe.category}
+            onChange={(e) => setResipe({ ...recipe, category: e.target.value })}
+          >
+            <option value="sedan">sedan</option>
+            <option value="coupe">coupe</option>
+            <option value="pickup">pickup</option>
+            <option value="hatchback">hatchback</option>
+            <option value="universal">universal</option>
+          </select>
+        
+
+        
+          <input
+            type="text"
+            placeholder="Link to the photo"
+            value={recipe.photos}
             onChange={(e) =>
-              setResipe({ ...recipe, category: parseInt(e.target.value, 10) })
+              setResipe({
+                ...recipe,
+                photos: recipe.photos.concat(e.target.value),
+              })
             }
           />
-        </label>
-        <label><input type="text" placeholder="Photos" value={recipe.photos}
-            onChange={(e) =>
-              setResipe({...recipe,photos: recipe.photos.concat(e.target.value)})
-            }
-          />
-        </label>
-        </div>
-        <button type="submit" className={style.createButton}>Create</button>
-      </form>
+        
+      </div>
+      <button type="submit" className={style.createButton}>
+        Create
+      </button>
+    </form>
   );
 }
